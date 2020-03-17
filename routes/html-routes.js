@@ -1,16 +1,16 @@
 const path = require("path");
 
+module.exports = htmlRouter => {
 
-html_router.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-});
+    htmlRouter.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/stats.html"));
+    });
 
-html_router.get("/stats", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/stats.html"));
-});
+    htmlRouter.get("/stats", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/stats.html"));
+    });
 
-html_router.get("/exercise", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/exercise.html"));
-});
-
-module.exports = html_router;
+    htmlRouter.get("/exercise", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/exercise.html"));
+    });
+};
